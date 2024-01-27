@@ -34,12 +34,11 @@ main {
   width: 20%;
 }
 
-.options ul li{
+.options ul {
   list-style-type: none;
 }
 
-#sidebar ul li{
-  
+#sidebar ul {
   border-color: var(--fg);
   border-style: solid;
   border-width: 2%;
@@ -48,11 +47,11 @@ main {
   text-align: center;
   border-radius: 25px;
   margin-bottom: 0.5em;
-  font-weight: 500; 
+  font-weight: 500;
 }
 
-#sidebar ul li:hover{
-  cursor:pointer;
+#sidebar ul p:hover {
+  cursor: pointer;
   animation: shake 0.8s;
   animation-iteration-count: infinite;
 }
@@ -81,7 +80,6 @@ main {
   font-size: 2em;
 }
 
-
 #progress-bar {
   background-color: var(--bg);
   border-color: var(--fg);
@@ -99,4 +97,3 @@ main {
   border-radius: 2em;
   z-index: -10;
 }
-
