@@ -3,6 +3,7 @@
     <title>Super Readers</title>
     <link rel="stylesheet" href="static/global.css" />
     <link rel="stylesheet" href="static/spelling.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
     <script type="text/javascript">
         var API_URL = {{url_for("wordbank_api", wordbank = "fruits") | tojson  }};
         var category = "fruits";
@@ -34,6 +35,16 @@
                     current_pos++;
                 } else {
                     progress_width += progress_increment;
+
+                    if (progress_width == 100) {
+                        confetti({
+                            particleCount: 100,
+                            spread: 70,
+                            origin: {y: 0.6},
+                        });
+                        progress_width = 0;
+                    }
+
                     document.getElementById("progress-interior").style.width = progress_width + "%";
                     display_new_word();
                 }
