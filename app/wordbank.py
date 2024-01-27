@@ -4,22 +4,22 @@ from typing import TypeAlias
 WordBank: TypeAlias = dict[str, str]
 
 ANIMALS: WordBank = {
-    "rabbit": "",
-    "hedgehog": "",
-    "koala": "",
-    "kangaroo": "",
-    "polar bear": "",
-    "cheetah": "",
-    "platypus": "",
+    "rabbit": "static/assets/Rabbit.png",
+    "hedgehog": "static/assets/Hedgehog.png",
+    "koala": "static/assets/Koala.png",
+    "kangaroo": "static/assets/Kangaroo.png",
+    "polar bear": "static/assets/PolarBear.png",
+    "cheetah": "static/assets/Cheetah.png",
+    "platypus": "static/assets/Platypus.png",
 }
 
 FRUITS: WordBank = {
-    "watermelon": "",
-    "apple": "",
-    "banana": "",
-    "strawberry": "",
-    "oranges": "",
-    "pineapple": "",
+    "watermelon": "static/assets/Watermelon.png",
+    "apple": "static/assets/Apple.png",
+    "banana": "static/assets/Banana.png",
+    "strawberry": "static/assets/Strawberry.png",
+    "orange": "static/assets/Orange.png",
+    "pineapple": "static/assets/Pineapple.png",
 }
 
 
