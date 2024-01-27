@@ -1,23 +1,40 @@
 from flask import Flask, render_template
+from app.wordbank import FRUITS, ANIMALS, WordBank, choose_random
 
 PORT: int = 8000
+WORDBANKS: dict[str, WordBank] = {
+    "fruits": FRUITS,
+    "animals": ANIMALS,
+}
 
 app = Flask(__name__)
 
 
-@app.route("/")
+# HTML pages
+@app.route("/", methods=["GET"])
 def home():
     return render_template("index.html")
 
 
-@app.route("/reading")
+@app.route("/reading", methods=["GET"])
 def reading():
     return render_template("reading.html")
 
 
-@app.route("/spelling")
+@app.route("/spelling", methods=["GET"])
 def spelling():
     return render_template("spelling.html")
+
+
+# API
+@app.route("/api/<wordbank>", methods=["GET"])
+def wordbank_api(wordbank: str):
+    chosen_bank = WORDBANKS.get(wordbank)
+    if chosen_bank is None:
+        return {"message": f"Word bank '{wordbank}' does not exist."}, 400
+
+    word, path = choose_random(chosen_bank)
+    return {"word": word, "path": path}, 200
 
 
 if __name__ == "__main__":
