@@ -34,15 +34,53 @@ main {
   width: 20%;
 }
 
+.options ul li{
+  list-style-type: none;
+}
+
+#sidebar ul li{
+  
+  border-color: var(--fg);
+  border-style: solid;
+  border-width: 2%;
+  padding: 1em;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 25px;
+  margin-bottom: 0.5em;
+  font-weight: 500; 
+}
+
+#sidebar ul li:hover{
+  cursor:pointer;
+  animation: shake 0.8s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(3deg);
+  }
+  50% {
+    transform: rotate(0eg);
+  }
+  75% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 .options {
   text-transform: uppercase;
+  text-decoration: none;
   line-height: 2em;
   font-size: 2em;
 }
-.options > li:hover {
-  text-decoration: underline;
-  font-weight: 500;
-}
+
 
 #progress-bar {
   background-color: var(--bg);
@@ -61,3 +99,4 @@ main {
   border-radius: 2em;
   z-index: -10;
 }
+
