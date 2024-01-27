@@ -1,11 +1,12 @@
 from flask import Flask, render_template
-from app.wordbank import FRUITS, ANIMALS, WordBank, choose_random
+from app.wordbank import FRUITS, ANIMALS, COUNTRIES, WordBank, choose_random
 from app.story import STORY
 
 PORT: int = 8000
 WORDBANKS: dict[str, WordBank] = {
     "fruits": FRUITS,
     "animals": ANIMALS,
+    "countries": COUNTRIES
 }
 
 app = Flask(__name__)
