@@ -21,6 +21,4 @@ page.
 - JavaScript
 - Python
     - Flask
-
-=== Possible Citations ===
-- https://exceptionalindividuals.com/about-us/blog/our-top-10-dyslexia-friendly-fonts/
+- tsParticles: [https://confetti.js.org/more.html]
