@@ -11,4 +11,10 @@ body {
   background-color: var(--bg);
   color: var(--fg);
   font-family: var(--font-family);
+  padding: 1em 3em;
+}
+
+a {
+  text-decoration: none;
+  color: var(--fg);
 }
