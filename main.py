@@ -27,6 +27,11 @@ def spelling():
     return render_template("spelling.html")
 
 
+@app.route("/customize", methods=["GET"])
+def customize():
+    return render_template("customize.html")
+
+
 @app.route("/reading/<story>", methods=["GET"])
 def storybank_api(story: str):
     data = STORY.get(story)
