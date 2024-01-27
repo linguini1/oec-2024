@@ -9,21 +9,15 @@
 
 <body>
     {% if story %}
-    <h1>{{ story }}</h1>
-    <p>{{ story_contents }}</p>
+    <h1 class="title">{{ story }}</h1>
     {% else %}
     <h1>Story not found.</h1>
     {% endif %}
 
-    <div class="main-container">
-        <div id="about" class="box">
-            <a href="/reading">
-                <div id="book" class="book">
-                    <h2>Go back to Reading</h2>
-                </div>
-            </a>
-        </div>
-    </div>
+    <main class="main-container">
+        {% if story %} {{ story_contents | safe}} {% endif %}
+        <a id="back-link" href="/reading"><-- Select a new book</a>
+    </main>
 </body>
 
 </html>

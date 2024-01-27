@@ -6,3 +6,20 @@
 body {
   margin-top: 7%; 
 }
+
+.title {
+  text-align: center;
+  margin-top: 2cm;
+  margin-bottom: 1.5cm;
+}
+
+#back-link {
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+#back-link:hover {
+  font-weight: 600;
+  text-decoration: underline;
+}
