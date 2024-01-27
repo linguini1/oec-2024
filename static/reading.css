@@ -1,7 +1,23 @@
-.dyslexia-mode {
-    scroll-behavior: smooth;
-    font-size: 20pt;
+.title{
+    text-align: center;
+    margin-top: 4cm;
+    margin-bottom: 1.5cm;
     color: darkblue;
+
+}
+
+.book{
+    display:inline-block;
+}
+
+.buttons{
+    text-align:center;
+}
+
+.button{
+    font-size:22px;
+    color:darkblue;
+    border-color: darkblue;
     letter-spacing: 0.35ch;
     word-spacing: 1.225ch; /* 3.5x letter-spacing */
 }
