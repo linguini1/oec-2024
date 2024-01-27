@@ -1,0 +1,15 @@
+h1 {
+  width: 100%;
+  text-align: center;
+  margin-top: 1.5em;
+  justify-content: center;
+  align-items: center;
+}
+
+.font {
+  font-size: 2em;
+}
+
+.font:hover {
+  text-decoration: underline;
+}
