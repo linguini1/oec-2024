@@ -33,4 +33,22 @@ These instructions assume that the user already has Python installed on their ma
 2. Run the main.py entry point using `py main.py` on Windows systems or `python3 main.py` on Linux.
 
 3. Once the main.py file has been executed, the website will be hosted on your machine locally. Flask will display the
-   URL where the website is hosted. If you open this URL in your browser, you will be able to navigate the site.
+   URL where the website is hosted in a message that says: "Running on http://<your ip>".
+   If you open this URL in your browser, you will be able to navigate the site.
+
+=== Project Components ===
+
+`requirements.txt` file: Describes the Python dependencies for this project.
+
+`main.py` file: The main entry point that hosts the website and handles web traffic requests.
+
+`templates` directory: Contains the HTML pages that make up the website and which are rendered by Flask.
+
+`app/` directory: Contains the Python source code files for implementing word bank and reading logic. These files
+contain a database of available stories and words for the learning activities.
+
+`static` directory: Contains the CSS files that style the website's HTMl web pages.
+
+`static/assets` directory: Contains the images and story files that are displayed on the website as part of the learning
+activities.
+
