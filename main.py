@@ -42,7 +42,6 @@ def wordbank_api(wordbank: str):
 def storybank_api(story):
     with open(STORY[story], "r", encoding="utf-8") as file:
         story_contents = file.read()
-        print(story_contents)
     return render_template("book.html", story = story, story_contents = story_contents)    
 
 
