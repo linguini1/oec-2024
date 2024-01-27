@@ -4,11 +4,19 @@
     <link rel="stylesheet" href="static/global.css" />
     <link rel="stylesheet" href="static/spelling.css" />
     <script type="text/javascript">
-        const API_URL = {{url_for("wordbank_api", wordbank = "fruits") | tojson  }};
+        var API_URL = {{url_for("wordbank_api", wordbank = "fruits") | tojson  }};
+        var category = "fruits";
+
+        function change_category(new_category) {
+            API_URL = API_URL.replace(category, new_category);
+            category = new_category;
+            display_new_word();
+        }
+
         function display_new_word() {
             const WORD_BOX = document.getElementById("word");
             const WORD_IMAGE = document.getElementById("word-img");
-            fetch(`${API_URL}`)
+            fetch(API_URL)
                 .then((response) => {
                     response.json().then(word_data => {
                         WORD_BOX.textContent = word_data.word;
@@ -19,7 +27,7 @@
     </script>
 </header>
 
-<img id="logo" src="static/assets/Super-readers-logo.png" />
+<a href="/"><img id="logo" src="static/assets/Super-readers-logo.png" /></a>
 
 <body>
     <main>
@@ -27,6 +35,12 @@
             <img id="word-img" src="static/assets/Apple.png" />
             <h2 id="word">WORD</h2>
             <button id="new-word" onclick="display_new_word()">New Word!</button>
+        </div>
+        <div id="sidebar">
+            <ul class="options">
+                <li onclick="change_category('fruits')">Fruits</li>
+                <li onclick="change_category('animals')">Animals</li>
+            </ul>
         </div>
     </main>
 </body>
