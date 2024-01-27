@@ -38,6 +38,8 @@ button {
   font-weight: 600;
   padding: 10px;
   outline: none;
+  letter-spacing: 0.35ch;
+  word-spacing: 1.225ch; /* 3.5x letter-spacing */
 }
 
 button:hover {

@@ -37,13 +37,18 @@ def wordbank_api(wordbank: str):
     word, path = choose_random(chosen_bank)
     return {"word": word, "path": path}, 200
 
+
 # API
 @app.route("/reading/<story>", methods=["GET"])
 def storybank_api(story):
-    with open(STORY[story], "r", encoding="utf-8") as file:
+    data = STORY.get(story)
+    if data is None:
+        return {"message": f"Story {story} does not exist."}, 400
+
+    title, path = data
+    with open(path, "r", encoding="utf-8") as file:
         story_contents = file.read()
-        print(story_contents)
-    return render_template("book.html", story = story, story_contents = story_contents)    
+    return render_template("book.html", story=title, story_contents=story_contents)
 
 
 if __name__ == "__main__":

@@ -1,10 +1,9 @@
 from typing import TypeAlias
 
-StoryBank: TypeAlias = dict[str, str]
+StoryBank: TypeAlias = dict[str, tuple[str, str]]
 
 STORY: StoryBank = {
-    "TheMedicineBag": "static\\assets\TheMedicineBag.txt",
-    "LambToSlaughter": "static\\assets\LambToSlaughter.txt",
-    "NiagaraFalls": "static\\assets\\NiagaraFalls.txt"
+    "TheMedicineBag": ("The Medicine Bag", "static\\assets\TheMedicineBag.txt"),
+    "LambToSlaughter": ("Lamb To Slaughter", "static\\assets\LambToSlaughter.txt"),
+    "NiagaraFalls": ("Niagara Falls", "static\\assets\\NiagaraFalls.txt"),
 }
-
