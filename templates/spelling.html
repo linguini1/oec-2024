@@ -8,6 +8,8 @@
         var category = "fruits";
         var current_pos = 0;
         var current_word = null;
+        var progress_width = 0;
+        var progress_increment = 10;
         document.addEventListener("keydown", update_word_display);
 
         function change_category(new_category) {
@@ -27,10 +29,12 @@
 
         function update_word_display(e) {
             if (typed_char(e)) {
-                document.getElementById("word").childNodes[current_pos].style.color = "green";
+                document.getElementById("word").childNodes[current_pos].style.color = "#00ff00";
                 if (current_pos < current_word.length - 1) {
                     current_pos++;
                 } else {
+                    progress_width += progress_increment;
+                    document.getElementById("progress-interior").style.width = progress_width + "%";
                     display_new_word();
                 }
             } else {
@@ -69,6 +73,9 @@
             <img id="word-img" src="static/assets/Apple.png" />
             <h2 id="word">WORD</h2>
             <p>Start typing to try spelling the word!</p>
+            <div id="progress-bar">
+                <div id="progress-interior"></div>
+            </div>
             <button id="new-word" onclick="display_new_word()">New Word!</button>
         </div>
         <div id="sidebar">

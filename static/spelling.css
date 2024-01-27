@@ -23,6 +23,7 @@ main {
 
 #new-word {
   font-size: 1em;
+  margin-top: 0.5em;
 }
 
 #word-img {
@@ -41,4 +42,22 @@ main {
 .options > li:hover {
   text-decoration: underline;
   font-weight: 500;
+}
+
+#progress-bar {
+  background-color: var(--bg);
+  border-color: var(--fg);
+  border-style: solid;
+  border-radius: 2em;
+  border-width: 2px;
+  height: 10px;
+  width: 100%;
+}
+
+#progress-interior {
+  background-color: #00ff00;
+  width: 0%;
+  height: 100%;
+  border-radius: 2em;
+  z-index: -10;
 }
