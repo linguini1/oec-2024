@@ -1,9 +1,17 @@
+main {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
 #image-display {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  width: 80%;
+  margin-left: 10%;
 }
 
 #word {
@@ -19,4 +27,18 @@
 
 #word-img {
   height: 15em;
+}
+
+#sidebar {
+  width: 20%;
+}
+
+.options {
+  text-transform: uppercase;
+  line-height: 2em;
+  font-size: 2em;
+}
+.options > li:hover {
+  text-decoration: underline;
+  font-weight: 500;
 }
