@@ -27,7 +27,7 @@ def spelling():
 
 
 # API
-@app.route("/api/<wordbank>", methods=["GET"])
+@app.route("/api/words/<wordbank>", methods=["GET"])
 def wordbank_api(wordbank: str):
     chosen_bank = WORDBANKS.get(wordbank)
     if chosen_bank is None:

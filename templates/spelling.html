@@ -3,6 +3,20 @@
     <title>Super Readers</title>
     <link rel="stylesheet" href="static/global.css" />
     <link rel="stylesheet" href="static/spelling.css" />
+    <script type="text/javascript">
+        const API_URL = {{url_for("wordbank_api", wordbank = "fruits") | tojson  }};
+        function display_new_word() {
+            const WORD_BOX = document.getElementById("word");
+            const WORD_IMAGE = document.getElementById("word-img");
+            fetch(`${API_URL}`)
+                .then((response) => {
+                    response.json().then(word_data => {
+                        WORD_BOX.textContent = word_data.word;
+                        WORD_IMAGE.src = word_data.path;
+                    })
+                })
+        }
+    </script>
 </header>
 
 <img id="logo" src="static/assets/Super-readers-logo.png" />
@@ -10,9 +24,9 @@
 <body>
     <main>
         <div id="image-display">
-            <img id="img" src="static/assets/Apple.png" />
+            <img id="word-img" src="static/assets/Apple.png" />
             <h2 id="word">WORD</h2>
-            <button id="new-word">New Word!</button>
+            <button id="new-word" onclick="display_new_word()">New Word!</button>
         </div>
     </main>
 </body>
