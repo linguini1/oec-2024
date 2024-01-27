@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  margin-top: 5%;
+  margin-top: 7%;
 }
 
 #about {
@@ -21,7 +21,7 @@
   border-color: var(--fg);
   border-style: solid;
   border-width: 5px;
-  padding: 1em;
+  padding: 3em;
   font-size: 1.5em;
   text-align: center;
   border-radius: 25px;
