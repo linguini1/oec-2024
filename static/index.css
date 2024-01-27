@@ -23,6 +23,7 @@
   padding: 1em;
   font-size: 1.5em;
   text-align: center;
+  border-radius: 25px;
 }
 
 #reading:hover,
@@ -45,4 +46,8 @@
 
 #reading {
   margin-bottom: 3em;
+}
+
+h2 {
+  text-transform: uppercase;
 }
