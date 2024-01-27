@@ -11,10 +11,17 @@ body {
   background-color: var(--bg);
   color: var(--fg);
   font-family: var(--font-family);
-  padding: 1em 3em;
+  padding: 4em 3em;
 }
 
 a {
   text-decoration: none;
   color: var(--fg);
+}
+
+#logo {
+  width: 100px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
