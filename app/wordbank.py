@@ -22,6 +22,14 @@ FRUITS: WordBank = {
     "pineapple": "static/assets/Pineapple.png",
 }
 
+COUNTRIES: WordBank = {
+    "canada":"static/assets/canada.png", 
+    "haiti":"static/assets/haiti.svg", 
+    "kenya":"static/assets/kenya.png",
+    "italy":"static/assets/italy.png",
+    "palestine":"static/assets/palestine.png"
+}
+
 
 def choose_random(wordbank: WordBank) -> (str, str):
     """Returns a random word from the word bank and the file path of its associated image."""
