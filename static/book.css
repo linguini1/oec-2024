@@ -2,3 +2,9 @@
   letter-spacing: 0.35ch;
   word-spacing: 1.225ch; /* 3.5x letter-spacing */
 }
+
+.title{
+    text-align: center;
+    margin-top: 2cm;
+    margin-bottom: 1.5cm;
+}
