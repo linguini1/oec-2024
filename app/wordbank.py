@@ -3,6 +3,7 @@ from typing import TypeAlias
 
 WordBank: TypeAlias = dict[str, str]
 
+# Possible word banks to be displayed in the spelling game
 ANIMALS: WordBank = {
     "rabbit": "static/assets/Rabbit.png",
     "hedgehog": "static/assets/Hedgehog.png",

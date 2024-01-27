@@ -11,26 +11,31 @@ app = Flask(__name__)
 # HTML pages
 @app.route("/", methods=["GET"])
 def home():
+    """Renders the home page of the website."""
     return render_template("index.html")
 
 
 @app.route("/reading", methods=["GET"])
 def reading():
+    """Renders the reading activity page of the website."""
     return render_template("reading.html")
 
 
 @app.route("/spelling", methods=["GET"])
 def spelling():
+    """Renders the spelling activity page of the website."""
     return render_template("spelling.html")
 
 
 @app.route("/customize", methods=["GET"])
 def customize():
+    """Renders the font customization page of the website."""
     return render_template("customize.html")
 
 
 @app.route("/reading/<story>", methods=["GET"])
 def storybank_api(story: str):
+    """Renders a specific story selected from the reading page."""
     data = STORY.get(story)
     if data is None:
         return {"message": f"Story {story} does not exist."}, 400
@@ -47,6 +52,7 @@ def storybank_api(story: str):
 # API
 @app.route("/api/words/<wordbank>", methods=["GET"])
 def wordbank_api(wordbank: str):
+    """Returns a random word from the word bank category selected along with the path to its illustration."""
     chosen_bank = WORDBANKS.get(wordbank)
     if chosen_bank is None:
         return {"message": f"Word bank '{wordbank}' does not exist."}, 400
