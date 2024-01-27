@@ -27,6 +27,20 @@ def spelling():
     return render_template("spelling.html")
 
 
+@app.route("/reading/<story>", methods=["GET"])
+def storybank_api(story: str):
+    data = STORY.get(story)
+    if data is None:
+        return {"message": f"Story {story} does not exist."}, 400
+
+    title, path = data
+    with open(path, "r", encoding="utf-8") as file:
+        story_contents = file.read()
+
+    story.replace("\n", "<br></br>")
+    return render_template("book.html", story=title, story_contents=story_contents)
+
+
 # API
 @app.route("/api/words/<wordbank>", methods=["GET"])
 def wordbank_api(wordbank: str):
@@ -36,19 +50,6 @@ def wordbank_api(wordbank: str):
 
     word, path = choose_random(chosen_bank)
     return {"word": word, "path": path}, 200
-
-
-# API
-@app.route("/reading/<story>", methods=["GET"])
-def storybank_api(story):
-    data = STORY.get(story)
-    if data is None:
-        return {"message": f"Story {story} does not exist."}, 400
-
-    title, path = data
-    with open(path, "r", encoding="utf-8") as file:
-        story_contents = file.read()
-    return render_template("book.html", story=title, story_contents=story_contents)
 
 
 if __name__ == "__main__":
