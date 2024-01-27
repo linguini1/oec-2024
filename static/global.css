@@ -12,6 +12,9 @@ body {
   color: var(--fg);
   font-family: var(--font-family);
   padding: 4em 3em;
+  /* Optimal spacing for people with dyslexia. */
+  word-spacing: 1.225ch;
+  letter-spacing: 0.35ch;
 }
 
 a {
@@ -24,4 +27,20 @@ a {
   position: absolute;
   left: 10px;
   top: 10px;
+}
+
+button {
+  color: var(--fg);
+  background-color: var(--bg);
+  border-color: var(--fg);
+  border-radius: 2em;
+  font-family: var(--font-family);
+  font-weight: 600;
+  padding: 10px;
+  outline: none;
+}
+
+button:hover {
+  color: var(--bg);
+  background-color: var(--fg);
 }

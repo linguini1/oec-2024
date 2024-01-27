@@ -5,3 +5,14 @@
   align-items: center;
   text-align: center;
 }
+
+#word {
+  text-transform: uppercase;
+  letter-spacing: 0.7em;
+  font-size: 4em;
+  margin-bottom: 0.3em;
+}
+
+#new-word {
+  font-size: 1em;
+}
