@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from app.wordbank import FRUITS, ANIMALS, WordBank, choose_random
+from app.story import STORY
 
 PORT: int = 8000
 WORDBANKS: dict[str, WordBank] = {
@@ -35,6 +36,14 @@ def wordbank_api(wordbank: str):
 
     word, path = choose_random(chosen_bank)
     return {"word": word, "path": path}, 200
+
+# API
+@app.route("/reading/<story>", methods=["GET"])
+def storybank_api(story):
+    with open(STORY[story], "r", encoding="utf-8") as file:
+        story_contents = file.read()
+        print(story_contents)
+    return render_template("book.html", story = story, story_contents = story_contents)    
 
 
 if __name__ == "__main__":

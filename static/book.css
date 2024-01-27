@@ -1,0 +1,7 @@
+.dyslexia-mode {
+    scroll-behavior: smooth;
+    font-size: 20pt;
+    color: darkblue;
+    letter-spacing: 0.35ch;
+    word-spacing: 1.225ch; /* 3.5x letter-spacing */
+}
