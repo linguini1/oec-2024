@@ -29,6 +29,10 @@ a {
   top: 10px;
 }
 
+#logo:hover{
+  animation: shake 0.5s;
+}
+
 button {
   color: var(--fg);
   background-color: var(--bg);
