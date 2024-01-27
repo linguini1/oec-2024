@@ -1,6 +1,13 @@
 ===== OEC 2024 =====
 
-=== Authors ===
+=== Super Readers===
+Super Readers is a child friendly educational website that helps dyslexic students in grades 4 improve their reading
+skills. The website is meant to cater to students with a visual learning style.
+
+We used semantic HTML tags so that users with screen readers will have an easier time interpreting the content on the
+page.
+
+=== Authors of Team Japan ===
 - Matteo Golin
 - Grant Achuzia
 - Hetarthi Soni
@@ -8,13 +15,6 @@
 
 === About the Competition ===
 The task is to develop an adaptive learning system to accommodate individual student learning disabilities.
-
-=== Super Readers===
-Super Readers is a child friendly educational website that helps dyslexic students in grades 4 improve their reading
-skills. The website is meant to cater to students with a visual learning style.
-
-We used semantic HTML tags so that users with screen readers will have an easier time interpreting the content on the
-page.
 
 === Technologies Used ===
 - HTML/CSS
