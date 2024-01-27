@@ -3,11 +3,7 @@ from app.wordbank import FRUITS, ANIMALS, COUNTRIES, WordBank, choose_random
 from app.story import STORY
 
 PORT: int = 8000
-WORDBANKS: dict[str, WordBank] = {
-    "fruits": FRUITS,
-    "animals": ANIMALS,
-    "countries": COUNTRIES
-}
+WORDBANKS: dict[str, WordBank] = {"fruits": FRUITS, "animals": ANIMALS, "countries": COUNTRIES}
 
 app = Flask(__name__)
 
@@ -60,4 +56,4 @@ def wordbank_api(wordbank: str):
 
 
 if __name__ == "__main__":
-    app.run("0.0.0.0", port=PORT, debug=True)
+    app.run("0.0.0.0", port=PORT)
