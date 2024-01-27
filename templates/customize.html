@@ -7,6 +7,14 @@
         function change_font(font_name) {
             document.documentElement.style.setProperty("--font-family", font_name);
         }
+        function easter_egg() {
+            let options = document.getElementsByTagName("li");
+            console.log(options);
+            let japanese = ["モントセラト", "ポピンズ", "能登サンズ", "漫画", "能登 日本語"];
+            for (var i = 0; i < options.length; i++) {
+                options[i].textContent = japanese[i];
+            }
+        }
     </script>
 </header>
 
@@ -21,6 +29,7 @@
             <li onclick="change_font('Poppins')" class="font">Poppins</li>
             <li onclick="change_font('Noto Sans')" class="font">Noto Sans</li>
             <li onclick="change_font('Comic Neue')" class="font">Comic Neue</li>
+            <li onclick="easter_egg()" class="font">Japanese</li>
         </ul>
     </main>
 </body>
