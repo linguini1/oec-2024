@@ -6,11 +6,42 @@
     <script type="text/javascript">
         var API_URL = {{url_for("wordbank_api", wordbank = "fruits") | tojson  }};
         var category = "fruits";
+        var current_pos = 0;
+        var current_word = null;
+        document.addEventListener("keydown", update_word_display);
 
         function change_category(new_category) {
             API_URL = API_URL.replace(category, new_category);
             category = new_category;
             display_new_word();
+        }
+
+        function add_spans(word) {
+            const WORD_BOX = document.getElementById("word");
+            for (var i = 0; i < word.length; i++) {
+                var span = document.createElement("span");
+                span.textContent = word[i];
+                WORD_BOX.appendChild(span);
+            }
+        }
+
+        function update_word_display(e) {
+            if (typed_char(e)) {
+                document.getElementById("word").childNodes[current_pos].style.color = "green";
+                if (current_pos < current_word.length - 1) {
+                    current_pos++;
+                } else {
+                    display_new_word();
+                }
+            } else {
+                document.getElementById("word").childNodes[current_pos].style.color = "red";
+            }
+        }
+
+        function typed_char(e) {
+            const letter = String.fromCharCode(e.which);
+            if (current_pos == current_word.length) {return false;}
+            return letter === current_word[current_pos].toUpperCase();
         }
 
         function display_new_word() {
@@ -19,8 +50,11 @@
             fetch(API_URL)
                 .then((response) => {
                     response.json().then(word_data => {
-                        WORD_BOX.textContent = word_data.word;
+                        WORD_BOX.innerHTML = ""; // Clear inner children
+                        current_pos = 0;
                         WORD_IMAGE.src = word_data.path;
+                        add_spans(word_data.word);
+                        current_word = word_data.word;
                     })
                 })
         }
@@ -29,7 +63,7 @@
 
 <a href="/"><img id="logo" src="static/assets/Super-readers-logo.png" /></a>
 
-<body>
+<body onload="display_new_word()">
     <main>
         <div id="image-display">
             <img id="word-img" src="static/assets/Apple.png" />
