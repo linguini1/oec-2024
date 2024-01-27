@@ -2,3 +2,7 @@
   letter-spacing: 0.35ch;
   word-spacing: 1.225ch; /* 3.5x letter-spacing */
 }
+
+body {
+  margin-top: 7%; 
+}
