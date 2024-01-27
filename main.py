@@ -34,10 +34,11 @@ def storybank_api(story: str):
         return {"message": f"Story {story} does not exist."}, 400
 
     title, path = data
+    story_contents = ""
     with open(path, "r", encoding="utf-8") as file:
-        story_contents = file.read()
+        for line in file:
+            story_contents += f"<p>{line}</p>"
 
-    story.replace("\n", "<br></br>")
     return render_template("book.html", story=title, story_contents=story_contents)
 
 
